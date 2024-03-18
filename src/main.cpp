@@ -6,12 +6,8 @@
 
 
 void initialize() {
-	pros::lcd::initialize();
-
 	pros::c::serctl(SERCTL_DISABLE_COBS, NULL);
-
 	pros::Mutex maplock = pros::Mutex();
-
 	pros::delay(3000);
 }
 
@@ -27,12 +23,7 @@ void opcontrol() {
 
 
 	while (true) {
-		
-		
 		std::cout << "Go Cocks \n";
-
-		
-		
 		pros::delay(10);
 	}
 
