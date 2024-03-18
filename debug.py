@@ -4,11 +4,13 @@ import time
 import os
 import subprocess
 
-build_process = subprocess.Popen("pros build", shell=True)
-build_process.wait()
 
-upload_process = subprocess.Popen("pros upload", shell=True)
-upload_process.wait()
+def upload_code():
+	build_process = subprocess.Popen("pros build", shell=True)
+	build_process.wait()
+
+	upload_process = subprocess.Popen("pros upload", shell=True)
+	upload_process.wait()
 
 
 
@@ -23,6 +25,7 @@ port = 7
 
 while True:
 	data = ser.readline().decode()
+	
 	print(data)
 	if data == "quit":
 		break
