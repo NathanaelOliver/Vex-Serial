@@ -19,7 +19,7 @@ def update_dashboard(stdscr):
         ser.close()
     ser.open()
     ser.isOpen()
-    port = 7
+
     # Turn off echoing of keys, and enter cbreak mode,
     # where no buffering is performed on keyboard input
     curses.noecho()
@@ -32,29 +32,12 @@ def update_dashboard(stdscr):
     try:
         # Define the dashboard layout
         stdscr.addstr(0, 0, "Dashboard", curses.A_BOLD)
-        stdscr.addstr(2, 0, "x_loc: ")
-        stdscr.addstr(3, 0, "y_loc: ")
-        stdscr.addstr(4, 0, "theta: ")
-
-        # Simulate updating sensor data
-        sensor1_value = 0
-        sensor2_value = 0
-        sensor3_value = 0
-
+        
         while True:
             data = ser.readline().decode().split(";")
-
-
-
-            # Clear previous sensor values
-            stdscr.addstr(2, 7, " " * 10)
-            stdscr.addstr(3, 7, " " * 10)
-            stdscr.addstr(4, 7, " " * 10)
-
-            # Print updated sensor values
-            stdscr.addstr(2, 7, str(data[0]))
-            stdscr.addstr(3, 7, str(data[1]))
-            stdscr.addstr(4, 7, str(data[2]))
+            for i in range(len(data)):
+                stdscr.addstr(2+i, 0, " " *40)
+                stdscr.addstr(2+i, 0, data[i])
 
             # Refresh the screen
             stdscr.refresh()
@@ -71,7 +54,7 @@ def update_dashboard(stdscr):
         stdscr.keypad(False)
         curses.echo()
         curses.endwin()
-
+        pass
 
 upload_code()
 # Run the dashboard
