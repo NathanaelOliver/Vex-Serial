@@ -97,6 +97,12 @@ void opcontrol() {
 		BLW = left_y - left_x + right_x;
 		BRW = left_y + left_x - right_x;
 		MLW = left_y + right_x;
+
+
+		if (controller.get_digital_new_press(DIGITAL_A)) {
+			snap_photo();
+		}
+
 		pros::delay(10);
 	}
 }
