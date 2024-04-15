@@ -28,17 +28,19 @@ ser.isOpen()
 
 count = 0;
 
+data = ser.readline().decode()
+
 while True:
-	data = ser.readline().decode()
 	
-	print(data)
-	if data == "snapshot\n":
-		ret, frame = cap.read()
-		print("taking photo");
-		cv2.imwrite("data/data" + str(count) + ".jpg", frame)
-		count += 1
-	if data == "exit\n":
-		break
+	
+
+	print("data/data" + str(count) + ".jpg")
+	ret, frame = cap.read()
+	cv2.imwrite("data/data" + str(count) + ".jpg", frame)
+	count += 1
+	time.sleep(0.5)
+	
 
 ser.close()
 cap.release()
+cv2.destroyAllWindows()
