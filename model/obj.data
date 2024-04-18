@@ -1,0 +1,5 @@
+classes = 3
+train = <path_to_train.txt>
+valid = <path_to_valid.txt>
+names = ./obj.names
+backup = <path_to_backup_folder>
