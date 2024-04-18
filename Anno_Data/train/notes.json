@@ -1,0 +1,21 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "Triball"
+    },
+    {
+      "id": 1,
+      "name": "barriers"
+    },
+    {
+      "id": 2,
+      "name": "goal"
+    }
+  ],
+  "info": {
+    "year": 2024,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}
