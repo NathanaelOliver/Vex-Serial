@@ -48,8 +48,7 @@ while True:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         cv2.putText(img, f"{label} ({confidence:.2f})", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
-        # Display frame
         cv2.imshow("Object Detection", frame)
-   # Release the video capture and close all windows
+    #Exit program
     cap.release()
     cv2.destroyAllWindows()
