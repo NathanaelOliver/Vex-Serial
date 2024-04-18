@@ -17,7 +17,7 @@ while True:
         break #die if we dont have video
 
     # Resize and normalize the frame to match the input shape of the model
-    resized_frame = cv2.resize(frame, (640, 480))   
+    resized_frame = cv2.resize(frame, (480, 640))   
     resized_frame = cv2.cvtColor(resized_frame, cv2.COLOR_BGR2RGB)
     resized_frame = np.expand_dims(resized_frame, axis=0) / 255.0  
 
